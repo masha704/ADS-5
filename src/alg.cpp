@@ -40,7 +40,7 @@ std::string infx2pstfx(std::string inf) {
                 stack.pop();
             } else if (inf[i] != ' ') {
                 int j = preference(stack.get());
-                while ((j > preference(inf[i])) && (!stack.isEmpty())) {
+                while ((j >= preference(inf[i])) && (!stack.isEmpty())) {
                     tmp.push_back(stack.get());
                     tmp.push_back(' ');
                     stack.pop();
