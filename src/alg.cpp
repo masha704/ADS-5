@@ -37,8 +37,7 @@ std::string infx2pstfx(std::string inf) {
                     stack.pop();
                 }
                 stack.pop();
-            }
-            else if (inf[i] != ' ') {
+            } else if (inf[i] != ' ') {
                 int j = preference(stack.get());
                 while ((j > preference(inf[i])) && (!stack.isEmpty())) {
                     tmp.push_back(stack.get());
@@ -58,8 +57,7 @@ std::string infx2pstfx(std::string inf) {
 
 int calk(char sum, int x, int y) {
     switch (sum)
-    {
-    case '+': return x + y;
+    {case '+': return x + y;
     case '-': return x - y;
     case '/': return x / y;
     case '*': return x * y;
