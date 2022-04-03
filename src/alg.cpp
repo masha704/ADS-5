@@ -25,6 +25,7 @@ std::string infx2pstfx(std::string inf) {
         pref = preference(inf[i]);
         if (pref == 4) {
             tmp.push_back(inf[i]);
+            tmp.push_back(' ');
         } else {
             if (((pref == 0) || stack.isEmpty())) {
                 stack.push(inf[i]);
