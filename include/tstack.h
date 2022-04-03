@@ -15,10 +15,11 @@ class TStack {
     void pop() {
         if (!isEmpty()) --top;
     }
-    void push(T value) { 
+    void push(T value) {
         if (isFull())
-           throw "full!"; else
+           throw "full!"; 
+        else
            arr[++top] = value;
-    }    
+    }
 };
 #endif  // INCLUDE_TSTACK_H_
