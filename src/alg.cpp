@@ -4,7 +4,7 @@
 #include "tstack.h"
 
 std::string infx2pstfx(std::string inf) {
-    Tstack <char, 100> stack;
+    TStack <char, 100> stack;
     std::string tmp;
     int pref;
     for (int i = 0; i < inf.size(); i++) {
@@ -70,7 +70,7 @@ int preference(char i) {
 }
 
 int eval(std::string pref) {
-    Tstack <int, 100> stack;
+    TStack <int, 100> stack;
     int x, y;
     for (int i = 0; i < post.size(); i++) {
         if (preference(post[i]) < 4) {
