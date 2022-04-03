@@ -3,6 +3,19 @@
 #include <map>
 #include "tstack.h"
 
+int preference(char i) {
+    switch (i) {
+    case '(': return 0;
+    case ')': return 1;
+    case '-': return 2;
+    case '+': return 2;
+    case '*': return 3;
+    case '/': return 3;
+    case ' ': return 4;
+    default: return 4;
+    }
+}
+
 std::string infx2pstfx(std::string inf) {
     TStack <char, 100> stack;
     std::string tmp;
@@ -41,8 +54,7 @@ std::string infx2pstfx(std::string inf) {
         tmp.push_back(' ');
         stack.pop();
     }
-    return tmp;
-}
+    return tmp;}
 
 int calk(char sum, int x, int y) {
     switch (sum)
@@ -56,31 +68,19 @@ int calk(char sum, int x, int y) {
     }
 }
 
-int preference(char i) {
-    switch (i) {
-    case '(': return 0;
-    case ')': return 1;
-    case '-': return 2;
-    case '+': return 2;
-    case '*': return 3;
-    case '/': return 3;
-    case ' ': return 4;
-    default: return 4;
-    }
-}
 
 int eval(std::string pref) {
     TStack <int, 100> stack;
     int x, y;
-    for (int i = 0; i < post.size(); i++) {
-        if (preference(post[i]) < 4) {
+    for (int i = 0; i < pref.size(); i++) {
+        if (preference(pref[i]) < 4) {
             y = stack.get();
             stack.pop();
             x = stack.get();
             stack.pop();
-            stack.push(calk(post[i], x, y));
-        } else if (preference(post[i]) == 4 && post[i] != ' ') {
-            stack.push(post[i] - '0');
+            stack.push(calk(pref[i], x, y));
+        } else if (preference(pref[i]) == 4 && pref[i] != ' ') {
+            stack.push(pref[i] - '0');
         }
     }
     return stack.get();
