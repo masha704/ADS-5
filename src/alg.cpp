@@ -54,6 +54,9 @@ std::string infx2pstfx(std::string inf) {
         tmp.push_back(' ');
         stack.pop();
     }
+    if (tmp[tmp.size() - 1] == ' ') {
+        tmp.erase(tmp.size() - 1);
+    }
     return tmp;}
 
 int calk(char sum, int x, int y) {
