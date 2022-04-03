@@ -59,8 +59,8 @@ int calk(char sum, int x, int y) {
     switch (sum)
     {case '+': return x + y;
     case '-': return x - y;
-    case '/': 
-       if(y ! = 0) return x / y;
+    case '/':
+       if(y != 0) return x / y;
     case '*': return x * y;
     default:
      return 0;
